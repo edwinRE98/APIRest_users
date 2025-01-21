@@ -3,8 +3,8 @@ package com.apirest.APIRest.pesistence.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Builder
 @Entity
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tb_users")
@@ -15,20 +15,17 @@ public class UserEntity {
     private Integer id;
 
     private String name;
+
     @Column(name = "last_name")
-
     private String lastName;
-    @Column(name = "id_document")
 
+    @Column(name = "id_document")
     private String idDocument;
 
     private String address;
 
     @Column(name = "phone_number")
-
     private String phoneNumber;
-
-    @Column(name = "email")
 
     private String email;
 

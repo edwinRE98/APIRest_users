@@ -18,6 +18,7 @@ public class UserDAOImpl implements IUserDAO {
     @Override
     @Transactional(readOnly = true)
     public List<UserEntity> findAll() {
+        //createNativeQuery crea una instancia de Query para ejecutar una declaración SQL nativa.
         var query = this.entityManager.createNativeQuery("SELECT * FROM tb_users",UserEntity.class);
         return query.getResultList();
     }
@@ -32,6 +33,7 @@ public class UserDAOImpl implements IUserDAO {
     @Transactional
     public void save(UserEntity userEntity) {
         this.entityManager.persist(userEntity);
+        //El método flush suele forzar los cambios para guardar el nuevo recurso de la entidad.
         this.entityManager.flush();
     }
 

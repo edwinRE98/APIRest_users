@@ -18,6 +18,7 @@ public class UserController {
     //Find all users
     @GetMapping("/findAll")
     public ResponseEntity<List<UserDTO>> findAll() {
+        //ResponseEntity envuelve a List u objeto y que permite manejar respuestas HTTP.
         return new ResponseEntity<>(this.userService.findAll(), HttpStatus.OK);
     }
 

@@ -3,7 +3,7 @@ package com.apirest.APIRest.pesistence.dao.impl;
 import com.apirest.APIRest.pesistence.dao.IUserDAO;
 import com.apirest.APIRest.pesistence.entities.UserEntity;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Optional;
 @Repository
 public class UserDAOImpl implements IUserDAO {
 
-    @PersistenceContext
+    @Autowired
     private EntityManager entityManager;
 
     @Override

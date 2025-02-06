@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/api/users")
 public class UserController {
 
@@ -27,7 +28,6 @@ public class UserController {
     public ResponseEntity<UserDTO> findById(@PathVariable Integer id) {
         return new ResponseEntity<>(this.userService.findById(id), HttpStatus.OK);
     }
-
     //Save user
     @PostMapping("/save")
     public ResponseEntity<UserDTO> save(@RequestBody UserDTO userDTO) {

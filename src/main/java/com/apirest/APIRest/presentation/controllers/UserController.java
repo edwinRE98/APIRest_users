@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+//Usamos CrossOrigin para indicar que nuestra API se conectará con cualquier cliente.
 @CrossOrigin("*")
 @RequestMapping("/api/users")
 public class UserController {
